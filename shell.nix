@@ -1,4 +1,2 @@
 { pkgs ? import <nixpkgs> { } }:
-pkgs.mkShell {
-  nativeBuildInputs = with pkgs.buildPackages; [ crystal crystalline ];
-}
+pkgs.mkShell { nativeBuildInputs = with pkgs.buildPackages; [ crystal ]; }
