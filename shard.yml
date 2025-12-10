@@ -1,0 +1,13 @@
+name: zen-mode-hyprland
+version: 0.1.0
+
+authors:
+  - zedddie <zedddiezxc@gmail.com>
+
+targets:
+  zen-mode-hyprland:
+    main: src/zen-mode-hyprland.cr
+
+crystal: '>= 1.18.2'
+
+license: MIT
