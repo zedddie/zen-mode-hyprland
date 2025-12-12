@@ -7,7 +7,7 @@ it does turn off: wallpapers(swww), borders, gaps, animations, borders, blur, sh
 
 for now if you want to use it, clone the repo, compile src/cli.cr;
 ```crystal
-crystal build src/cli.cr
+crystal build src/cli.cr --release -o zen-mode-hyprland
 ```
 ## Usage
 ./cli [-h | --help] [-i | --initiate] [-o | --off]
