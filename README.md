@@ -3,12 +3,17 @@
 is a small crystal cli tool that modificates hyprland config;
 it does turn off: wallpapers(swww), borders, gaps, animations, borders, blur, shadows, waybar
 
+removing visual distractions while working and returning them when needed
 ## Installation
 
 for now if you want to use it, clone the repo, compile src/cli.cr;
 ```crystal
 crystal build src/cli.cr --release -o zen-mode-hyprland
 ```
+## Example
+
+https://github.com/user-attachments/assets/86923399-bb0f-4ad7-bd58-1e2bdbffe8f7
+
 ## Usage
 ./cli [-h | --help] [-i | --initiate] [-o | --off]
 
