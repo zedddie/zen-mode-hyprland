@@ -1,10 +1,13 @@
+require "path"
+
 module Zen::Mode::Hyprland
 
-  VERSION = "0.1.0"
-  CFG = "/home/zedddie/.config/hypr/hyprland.conf"
-  CFG_BAK = "/home/zedddie/.config/hypr/hyprland.conf.bak"
+  HOME_DIR = Path.home
+  VERSION = "0.1.1"
+  CFG = (Path[HOME_DIR] / ".config" / "hypr" / "hyprland.conf").to_s
+  CFG_BAK = CFG + ".bak"
   VARS_NUMS = ["power", "passes", "bordersize", "rounding", "gaps_in", "gaps_out", "decorations:shadow_render_power"]
-  VARS_BOOL = ["animations"]
+  VARS_BOOL = ["enabled"]
   # 1: space, 2: key, 3: =, 4: value, 5: trailing comment
   REGEX = /^(\s*)(\w+:?\w*)(\s*=\s*)(.+?)(\s*($|#.*))/
 
@@ -39,8 +42,9 @@ module Zen::Mode::Hyprland
 
     File.write(CFG, new_content.join("\n"))
 
-    system "pkill waybar"
-    system "pkill swww-daemon"
+    system "pkill waybar > /dev/null 2>&1"
+    system "pkill swww-daemon > /dev/null 2>&1"
+    puts "Zen mode initiated successfully(i hope)"
   end
 
   def self.default_mode()
@@ -50,10 +54,12 @@ module Zen::Mode::Hyprland
     end
 
     File.copy(CFG_BAK, CFG)
-
+    puts "Using backup to restore config: #{CFG_BAK}"
+    puts "Config restored (I hope :1)"
     File.delete(CFG_BAK)
+    puts "Deleting backup: #{CFG_BAK}"
 
-    system "waybar &"
-    system "swww-daemon &"
+    system "waybar > /dev/null 2>&1 &"
+    system "swww-daemon > /dev/null 2>&1 &"
   end
 end
