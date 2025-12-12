@@ -1,8 +1,10 @@
 require "option_parser"
 require "./zen-mode-hyprland"
+require "system/user"
 
 OptionParser.parse do |parser|
-  parser.banner = "ill change ur hypr settings be ready"
+  username = ENV["USER"]
+  parser.banner = "ill change ur hypr settings, #{username}r be ready"
 
   parser.on "-h", "--help", "Print out this text" do
     puts parser
