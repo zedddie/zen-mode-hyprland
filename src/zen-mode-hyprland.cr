@@ -11,6 +11,14 @@ module Zen::Mode::Hyprland
   # 1: space, 2: key, 3: =, 4: value, 5: trailing comment
   REGEX = /^(\s*)(\w+:?\w*)(\s*=\s*)(.+?)(\s*($|#.*))/
 
+  def self.toggle_mode()
+    if File.exists?(CFG_BAK)
+      self.default_mode()
+    else
+      self.zen_mode()
+    end
+  end
+
   def self.zen_mode()
     if File.exists?(CFG_BAK)
       puts "ERROR: bak exists, return to default mode to use zen mode"
