@@ -6,7 +6,7 @@ module Zen::Mode::Hyprland
   VERSION = "0.1.1"
   CFG = (Path[HOME_DIR] / ".config" / "hypr" / "hyprland.conf").to_s
   CFG_BAK = CFG + ".bak"
-  VARS_NUMS = ["power", "passes", "bordersize", "rounding", "gaps_in", "gaps_out", "decorations:shadow_render_power"]
+  VARS_NUMS = ["power", "passes", "border_size", "rounding", "rounding_power", "gaps_in", "gaps_out", "decorations:shadow_render_power"]
   VARS_BOOL = ["enabled"]
   # 1: space, 2: key, 3: =, 4: value, 5: trailing comment
   REGEX = /^(\s*)(\w+:?\w*)(\s*=\s*)(.+?)(\s*($|#.*))/
