@@ -6,6 +6,9 @@ shadows, waybar
 
 removing visual distractions while working and returning them when needed
 
+!for now very unstable with large and complicated configs and does not
+support modular configs.!
+
 ## Installation
 
 for now if you want to use it, clone the repo, compile src/cli.cr;
