@@ -21,8 +21,7 @@ OptionParser.parse do |parser|
     exit
   end
 
-  parser.on "-t", "--toggle", "Change bettwen zen and default modes
-    without specializing mode name" do
+  parser.on "-t", "--toggle", "Toggle between zen and default modes" do
     Zen::Mode::Hyprland.toggle_mode()
     exit
   end
