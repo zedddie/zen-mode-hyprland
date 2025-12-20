@@ -12,9 +12,11 @@ support modular configs.!
 ## Installation
 
 for now if you want to use it, clone the repo, compile src/cli.cr;
+(thx to shell.nix you dont have to install crystal and its dependencies)
+(also somehow manage to install nix-shell if youre not on nixos)
 
-```crystal
-crystal build src/cli.cr --release -o zen-mode-hyprland
+```sh
+nix-shell --command "crystal build src/cli.cr --release -o zen-mode-hyprland"
 ```
 
 ## Example
